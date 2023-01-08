@@ -13,9 +13,9 @@ gost:
     icon: https://gost.run/images/gost.png 
   containers:
     monk-gost:
+      bash: gost -L=:8080
       image: ginuerzh/gost
       image-tag: latest
-      bash: sleep 3600 #<- `gost ${expose_parameter}`
       ports:
         - <- `0.0.0.0:${expose_port}:8080`
   files:
@@ -24,5 +24,11 @@ gost:
       mode: 511
       path: /opt/gost/config.json
       container: monk-gost
+  services:
+    gost-svc:
+      container: monk-gost
+      port: 8080
+      protocol: tcp
+      host-port: <- `${expose_port}`
 
 
