@@ -17,47 +17,47 @@ not connected to cluster
 
 ## Clone Repository
 ```bash
-git clone https://github.com/monk-io/monk-gost
+git clone https://github.com/monk-io/gost
 ```
 
 ## Load Template
 ```bash
-cd monk-gost
+cd gost
 monk load MANIFEST
 ```
 
 
 #### Let's take a look at the themes I have installed.
 ```bash
-foo@bar:~$ monk list monk-gost
+foo@bar:~$ monk list gost
 ✔ Got the list
 Type      Template         Repository  Version  Tags
-runnable  monk-gost/gost   local       -        -
-group     monk-gost/stack  local       -        -
+runnable  gost/gost   local       -        -
+group     gost/stack  local       -        -
 ```
 
 ## Deploy Stack
 ```bash
-foo@bar:~$ monk run monk-gost/stack
-? Select tag to run [local/monk-gost/stack] on: mnk
-✔ Starting the job: local/monk-gost/stack... DONE
+foo@bar:~$ monk run gost/stack
+? Select tag to run [local/gost/stack] on: mnk
+✔ Starting the job: local/gost/stack... DONE
 ✔ Preparing nodes DONE
 ✔ Checking/pulling images...
 ✔ [================================================] 100% ginuerzh/gost:latest mnk
 ✔ Checking/pulling images DONE
-✔ Started local/monk-gost/stack
+✔ Started local/gost/stack
 
-🔩 templates/local/monk-gost/stack
+🔩 templates/local/gost/stack
  └─🧊 Peer mnk
-    └─🔩 templates/local/monk-gost/gost
-       └─📦 570b584e7ce6813b7b8dfe68027d1bd0-local-monk-gost-gost-monk-gost
+    └─🔩 templates/local/gost/gost
+       └─📦 570b584e7ce6813b7b8dfe68027d1bd0-local-gost-gost-gost
           ├─🧩 ginuerzh/gost:latest
           └─🔌 open 13.50.100.228:8080 (0.0.0.0:8080) -> 80
 
 💡 You can inspect and manage your above stack with these commands:
-	monk logs (-f) local/monk-gost/stack - Inspect logs
-	monk shell     local/monk-gost/stack - Connect to the container's shell
-	monk do        local/monk-gost/stack/action_name - Run defined action (if exists)
+	monk logs (-f) local/gost/stack - Inspect logs
+	monk shell     local/gost/stack - Connect to the container's shell
+	monk do        local/gost/stack/action_name - Run defined action (if exists)
 💡 Check monk help for more!
 ```
 

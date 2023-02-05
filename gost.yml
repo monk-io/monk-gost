@@ -1,4 +1,4 @@
-namespace: monk-gost
+namespace: gost
 
 # Path: gost.yml
 
@@ -12,7 +12,7 @@ gost:
     publisher: monk.io
     icon: https://gost.run/images/gost.png 
   containers:
-    monk-gost:
+    gost:
       bash: gost -L=:8080
       image: ginuerzh/gost
       image-tag: latest
@@ -23,10 +23,10 @@ gost:
       contents: <<< config.json
       mode: 511
       path: /opt/gost/config.json
-      container: monk-gost
+      container: gost
   services:
     gost-svc:
-      container: monk-gost
+      container: gost
       port: 8080
       protocol: tcp
       host-port: <- `${expose_port}`
