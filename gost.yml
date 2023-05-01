@@ -1,6 +1,5 @@
+---
 namespace: gost
-
-# Path: gost.yml
 
 gost:
   defines: runnable
@@ -10,14 +9,12 @@ gost:
     description: A simple security tunnel written in golang.
     website: https://gost.run/en/
     publisher: monk.io
-    icon: https://gost.run/images/gost.png 
+    icon: https://gost.run/images/gost.png
   containers:
     gost:
       bash: gost -L=:8080
       image: ginuerzh/gost
       image-tag: latest
-      ports:
-        - <- `0.0.0.0:${expose_port}:8080`
   files:
     server-def:
       contents: <<< config.json
@@ -30,5 +27,3 @@ gost:
       port: 8080
       protocol: tcp
       host-port: <- `${expose_port}`
-
-

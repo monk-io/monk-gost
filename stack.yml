@@ -1,3 +1,4 @@
+---
 namespace: gost
 
 stack:
@@ -8,5 +9,3 @@ stack:
     expose_port:
       type: int
       value: 8080
-
-    
