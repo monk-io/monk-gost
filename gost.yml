@@ -26,4 +26,3 @@ gost:
       container: gost
       port: 8080
       protocol: tcp
-      host-port: <- `${expose_port}`
