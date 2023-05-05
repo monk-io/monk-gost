@@ -1,13 +1,16 @@
 # Gost & Monk
+
 This repository contains Monk.io template to deploy gost either locally or on cloud of your choice (AWS, GCP, Azure, Digital Ocean).
 
-# Prerequisites
+## Prerequisites
+
 - [Install Monk](https://docs.monk.io/docs/get-monk)
 - [Register and Login Monk](https://docs.monk.io/docs/acc-and-auth)
 - [Add Cloud Provider](https://docs.monk.io/docs/cloud-provider)
 - [Add Instance](https://docs.monk.io/docs/multi-cloud)
 
-#### Make sure monkd is running.
+## Make sure monkd is running
+
 ```bash
 foo@bar:~$ monk status
 daemon: ready
@@ -16,18 +19,18 @@ not connected to cluster
 ```
 
 ## Clone Repository
+
 ```bash
 git clone https://github.com/monk-io/gost
 ```
 
 ## Load Template
+
 ```bash
 cd gost
 monk load MANIFEST
 ```
 
-
-#### Let's take a look at the themes I have installed.
 ```bash
 foo@bar:~$ monk list gost
 ✔ Got the list
@@ -37,6 +40,7 @@ group     gost/stack  local       -        -
 ```
 
 ## Deploy Stack
+
 ```bash
 foo@bar:~$ monk run gost/stack
 ? Select tag to run [local/gost/stack] on: mnk
@@ -55,9 +59,9 @@ foo@bar:~$ monk run gost/stack
           └─🔌 open 13.50.100.228:8080 (0.0.0.0:8080) -> 80
 
 💡 You can inspect and manage your above stack with these commands:
-	monk logs (-f) local/gost/stack - Inspect logs
-	monk shell     local/gost/stack - Connect to the container's shell
-	monk do        local/gost/stack/action_name - Run defined action (if exists)
+ monk logs (-f) local/gost/stack - Inspect logs
+ monk shell     local/gost/stack - Connect to the container's shell
+ monk do        local/gost/stack/action_name - Run defined action (if exists)
 💡 Check monk help for more!
 ```
 
@@ -66,17 +70,18 @@ foo@bar:~$ monk run gost/stack
 `curl -x 13.50.100.228:8080 https://myip.today`
 
 ## Variables
+
 The variables are in `stack.yml` file. You can quickly setup by editing the values here.
 
-| Variable                     	| Description                               	|
-|------------------------------	|-------------------------------------------	|
-| expose_port                    | Monk listen port, Default: 8080 	               |
+| Variable    | Description      | Default |
+| ----------- | ---------------- | ------- |
+| expose_port | Monk listen port | 8080    |
 
 ## Config file
 
 It is config.json file
 
-``` 
+``` json
 {
     "Debug": true,
     "Retries": 0,
@@ -91,4 +96,3 @@ It is config.json file
 ```bash
 monk purge -x -a
 ```
-

@@ -4,12 +4,12 @@ namespace: gost
 gost:
   defines: runnable
   metadata:
-    defines: metadata
     name: Gost
     description: A simple security tunnel written in golang.
     website: https://gost.run/en/
     publisher: monk.io
     icon: https://gost.run/images/gost.png
+    tags: gost, simple tunnel, tunnel software, tunnelling
   containers:
     gost:
       bash: gost -L=:8080
@@ -17,12 +17,12 @@ gost:
       image-tag: latest
   files:
     server-def:
-      contents: <<< config.json
-      mode: 511
+      contents: <<< files/config.json
+      mode: 0644
       path: /opt/gost/config.json
       container: gost
   services:
-    gost-svc:
+    gost:
       container: gost
       port: 8080
       protocol: tcp
