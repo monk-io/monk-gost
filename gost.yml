@@ -9,7 +9,7 @@ gost:
     website: https://gost.run/en/
     publisher: monk.io
     icon: https://gost.run/images/gost.png
-    tags: gost, simple tunnel, tunnel software, tunnelling
+    tags: gost, tunnelling, simple tunnel
   containers:
     gost:
       bash: gost -L=:8080
